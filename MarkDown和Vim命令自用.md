@@ -23,12 +23,40 @@
 2. 行末加入两个空格  
 3. 或者加入（```<br>```）
 
+## 插入图片
+基础格式为：  
+- ![Alt text] (图片链接"optional title")  
+``` 
+Alt text：用来描述图片的关键词，可以不写 图片链接：可以是图片的本地地址或者是网址。"optional title"：鼠标悬置于图片上会出现的标题文字，可以不写。
+```
+1. 第一种插入本地图片  
+- ![Alt text] (本地图片路径)
+```  
+本地图片路径可以为绝对路径，也可以为相对路径，我觉得相对路劲好一些。插入本地图片就是不能随取随用，不太灵活。
+```
+2. 第二种插入网络图片
+- ![Alt text] (网络图片路径)
+```
+网络图片的地址，受限于网络状态。
+```
+3. 第三种把图片存入文件里
+- ![Alt text] (base64)
+```
+base64就是把图片转换成字符串，然后把它填到路劲里，缺点是base64生成的是很长的码。不过可以使用引用的办法把它放在最后。
+```
+文中使用的引用语法：  
+![Alt text] [image]  
+文章末尾使用语法：  
+[image]:字符串
 
 
 ps:  
 参考文档链接：  
 1. [Markdown入门参考](http://xianbai.me/learn-md/article/about/helloworld.html)
 2. [Markdown语法](https://www.jianshu.com/p/b7854e0848f0)
+3. [Markdown添加图片的三种方式](https://www.jianshu.com/p/280c6a6f2594)
+4. [Markdown插入图片技巧（知乎）](https://www.zhihu.com/question/21065229)
+5. [如何在Markdown注释一段文字](https://www.jianshu.com/p/9be87e7e15bf)
 
 
 # Vim  

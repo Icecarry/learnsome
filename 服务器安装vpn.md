@@ -11,10 +11,28 @@
 # SSR安装
 登录系统后使用一件安装脚本安装，安装脚本有系统要求，安装之前确定系统以及系统版本号。
 查看系统版本号命令：  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```uname -r```  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;```uname -r``` 
 
+执行下面的命令：  
+```
+wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh  
+chmod +x shadowsocks-all.sh  
+./shadowsocks-all.sh 2>&1 | tee shadowsocks-all.log
+```
+![][zhixing]
 ### ps:
 安装教程链接：  
 1. [四合一安装脚本](https://segmentfault.com/a/1190000017952445)
 2. [可能引用四合一脚本的另外一个脚本](https://segmentfault.com/a/1190000017952445)
 
+
+[^_^]: #这是图片连接
+[zhixing]:ssrpic/zhixing.png
+[banben]:ssrpic/banben.png
+[pwd]:ssrpic/pwd.png
+[port]:ssrpic/port.png
+[jiami]:ssrpic/jiami.png
+[xieyi]:ssrpic/xieyi.png
+[hunxiao]:ssrpic/hunxiao.png
+[continue]:ssrpic/continue.png
+[last]:ssrpic/last.png
