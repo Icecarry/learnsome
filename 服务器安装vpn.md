@@ -153,11 +153,28 @@ wg-quick down wg0
 
 启动完后使用```wg```命令查看是否启动成功以及状态。
 
-## 添加客户端
+## 添加删除客户端
 首先在客户端生成密钥对，复制客户端的公钥，使用以下命令在服务器添加客户端。
 ``` 
 # client-public-key 填写客户端生成的公钥(publickey)
 sudo wg set wg0 peer <client-public-key> allowed-ips 10.0.0.2/24 
+```
+```
+sudo wg set wg0 peer <client-public-key> remove
+```
+
+## 开启ipv6
+需要修改``` /etc/sysctl.conf ```文件，之前开启ipv4转发已经打开了```net.ipv4.ip_forward = 1```，现在需要加一句：  ```net.ipv6.conf.all.forwarding=1```  
+现在我的文件里是这样的：  
+```
+net.ipv6.conf.all.accept_ra = 2 
+net.ipv4.tcp_congestion_control = bbr
+net.core.default_qdisc = fq
+# 上面的都是安装完vps就在文件里的，下面是后加的。
+net.ipv4.ip_forward=1  # 开启ipv4转发
+net.ipv6.conf.default.accept_ra = 2    
+net.ipv6.conf.all.forwarding=1  # 开启ipv6转发
+net.ipv6.conf.default.accept_ra = 2
 ```
 
 
@@ -171,7 +188,10 @@ sudo wg set wg0 peer <client-public-key> allowed-ips 10.0.0.2/24
 4. [v2ray官网](https://www.v2ray.com/)
 5. [anyconnect脚本安装](https://doubibackup.com/nr2hjmg2.html)
 6. [wireguard官网](https://www.wireguard.com)
-7. [wireguard参考1在Ubuntu部署vpn隧道](https://steemit.com/cn/@curl/ubuntu-vpn-wireguard)
-8. [wireguard参考2自己搭建wireguard给Android](https://mine260309.me/archives/1697)
-9. [wireguard参考3wg0启动错误解决办法](https://www.cnblogs.com/redmondfan/p/10304322.html)
+7. [wireguard参考在Ubuntu部署vpn隧道](https://steemit.com/cn/@curl/ubuntu-vpn-wireguard)
+8. [wireguard参考自己搭建wireguard给Android](https://mine260309.me/archives/1697)
+9. [wireguard参考wg0启动错误解决办法](https://www.cnblogs.com/redmondfan/p/10304322.html)
+10. [wireguard参考ipv6转发](https://www.mfzy.cf/archives/240)
+11. [wireguard参考ipv6转发2](https://github.com/zbinlin/blog/blob/master/wireguard-usage.md)
+12. [witeguard参考综合](https://jasonth.fun/archives/107/)
 
