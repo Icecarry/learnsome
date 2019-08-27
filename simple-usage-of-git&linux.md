@@ -102,6 +102,14 @@ userdel web			 # 删除用户
 groupdel web		 # 删除用户组
 usermod –G web web   #（强制删除该用户的主目录和主目录下的所有文件和子目录）
 ```
+### Ubuntu新建用户添加sudo权限
+&emsp;&emsp;新建的用户如果是使用`adduser`的命令的话，它会创建和用户同名的组，这样用户就无法使用`sudo`权限了。
+&emsp;&emsp;首先查询创建的新用户所属的组，使用命令`groups 用户名`或者`id 用户名`或当前登录的就是该用户的话直接使用`id`就好了，可以看到`groups`那一栏里只有和用户名相同的一个组。我找到三种方式添加`sudo`权限。
+&emsp;&emsp;第一种，修改`/etc/sudoers`文件，但这个文件是个只读文件，root用户下输入命令`chmod U+w /etc/sudoers`添加写权限。然后输入命令`vim /etc/sudoers`进入编辑模式，找到
+`root    ALL=(ALL) ALL`
+在下面空白行添加
+`用户名   ALL=(ALL) ALL`
+然后`:x`保存，再使用`chmod u-w /etc/sudoers`去掉文件的写权限。使用
 
 
 # vultr的VPS修改root账户密码
@@ -124,3 +132,6 @@ ps 参考资料：
 3. [git多用户管理](https://www.jianshu.com/p/8e0d54ee3d20)
 4. [git报错](https://blog.csdn.net/belalds/article/details/80485160)
 5. [linux用户管理(Ubuntu centos)](https://www.jianshu.com/p/6bc98fd1c4a5)
+6. [配置文件赋予root权限](https://jingyan.baidu.com/article/f006222877270bfbd3f0c8e8.html)
+7. [Linux用户，用户组的权限配置](https://www.sohu.com/a/293713042_236714)
+8. [Linux环境下为普通用户添加sudo权限](https://blog.csdn.net/qq_39290007/article/details/81125750)
