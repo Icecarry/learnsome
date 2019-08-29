@@ -100,7 +100,7 @@ sudo apt-get install wireguard
 进入配置目录 `cd /etc/wireguard `,然后执行下面的命令。 
 ```
 umask 077
-wg genkey | tee privatekey | wg genkey > publickey
+wg genkey | tee privatekey | wg pubkey > publickey
 ```
 打印公钥私钥： 
 ``` 
