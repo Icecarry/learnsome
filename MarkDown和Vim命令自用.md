@@ -49,14 +49,26 @@ base64就是把图片转换成字符串，然后把它填到路劲里，缺点�
 文章末尾使用语法：  
 [image]:字符串
 
+## 代码高亮
+代码使用` ``` ` 或者使用 ``` ` ```，它们都可以使代码高亮，但``` ` ```只能一行，` ``` `如果要展示多段代码，那开始和结尾的都需要单独占一行。
+
+## 首行缩进
+```
+半方大的空白 &ensp; 或者 &#8194;
+全方大的空白 &emsp; 或者 &#8195;
+不断行的空白格 &nbsp; 或者 &#160;
+```
+由于markdown也适用html语言，所以也可以用html语言来写。
 
 ps:  
 参考文档链接：  
+
 1. [Markdown入门参考](http://xianbai.me/learn-md/article/about/helloworld.html)
 2. [Markdown语法](https://www.jianshu.com/p/b7854e0848f0)
 3. [Markdown添加图片的三种方式](https://www.jianshu.com/p/280c6a6f2594)
 4. [Markdown插入图片技巧（知乎）](https://www.zhihu.com/question/21065229)
 5. [如何在Markdown注释一段文字](https://www.jianshu.com/p/9be87e7e15bf)
+6. [Markdown中实现首行缩进](https://www.jianshu.com/p/5827c325bc92)
 
 
 # Vim  
